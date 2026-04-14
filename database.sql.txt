@@ -1,0 +1,34 @@
+
+CREATE TABLE Categorie (
+    id_categoria SERIAL PRIMARY KEY,
+    nome VARCHAR(100) UNIQUE NOT NULL
+);
+
+CREATE TABLE Spese (
+    id_spesa SERIAL PRIMARY KEY,
+    data DATE NOT NULL,
+    importo DECIMAL(10, 2) NOT NULL CHECK (importo > 0),
+    id_categoria INTEGER REFERENCES Categorie(id_categoria),
+    descrizione TEXT
+);
+
+CREATE TABLE budget (
+    id_budget SERIAL PRIMARY KEY,
+    id_categoria INTEGER REFERENCES Categorie(id_categoria),
+    importo_limite DECIMAL(10,2) NOT NULL,
+    anno_mese varchar(7) NOT NULL, 
+    CONSTRAINT unique_budget_periodo UNIQUE(id_categoria, anno_mese)
+);
+
+INSERT INTO Categorie (nome) VALUES ('Alimentari');
+INSERT INTO Categorie (nome) VALUES ('Trasporti');
+
+INSERT INTO Spese (data, importo, id_categoria, descrizione) 
+VALUES ('2024-05-15', 45.50, (SELECT id_categoria FROM Categorie WHERE nome = 'Alimentari'), 'Spesa settimanale supermercato');
+INSERT INTO Spese (data, importo, id_categoria, descrizione) 
+VALUES ('2024-05-16', 20.00, (SELECT id_categoria FROM Categorie WHERE nome = 'Trasporti'), 'Rifornimento carburante');
+
+INSERT INTO Budget (id_categoria, importo_limite, anno_mese) 
+VALUES ((SELECT id_categoria FROM Categorie WHERE nome = 'Alimentari'), 300.00, '2024-05');
+INSERT INTO Budget (id_categoria, importo_limite, anno_mese) 
+VALUES ((SELECT id_categoria FROM Categorie WHERE nome = 'Trasporti'), 100.00, '2024-05');
