@@ -43,3 +43,5 @@ Apri il terminale in Python e installa la libreria per la connessione al databas
 Per avviare l'applicazione, posizionati nella cartella del progetto ed esegui main.py dal terminale
 
 Una volta avviato, segui le istruzioni a schermo del menu interattivo.
+
+https://github.com/lorenzopitino/Personal-Expense-System/issues/1#issue-4263525613
