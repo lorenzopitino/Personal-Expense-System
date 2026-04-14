@@ -3,20 +3,43 @@ Elaborato fondamenti di informatica
 
  1. Descrizione del Progetto
 
-Il progetto consiste nella realizzazione di un database per la gestione delle spese personali e del budget mensile, implementato tramite linguaggio SQL.
+Il software è un sistema di gestione delle spese personali che permette di:
+
+- Gestire categorie di spesa personalizzate.
+
+- Registrare transazioni con data, importo e descrizione.
+
+- Impostare un budget mensile per ogni categoria.
+
+- Visualizzare report dettagliati (spese per categoria, analisi budget vs spese, elenco cronologico).
+
+Il sistema è composto da un database relazionale (SQL) e un'interfaccia a riga di comando (Python).
 
  2. Requisiti per l'esecuzione
  
-Per eseguire correttamente lo script SQL e gestire il database, sono necessari i seguenti strumenti:
+Software Necessario:
+- Interprete: Python 3.8 o superiore.
 
-- Database Management System (DBMS): PostgreSQL (consigliato), MySQL o SQLite.
+- Database: PostgreSQL (attivo e funzionante).
 
-- Interprete/Client: Un terminale con client SQL (es. psql) o un'interfaccia grafica come pgAdmin o DBeaver.
+Il programma utilizza le seguenti librerie:
 
-- Librerie: Non sono richieste librerie esterne, lo script utilizza SQL standard.
+psycopg2: Libreria esterna necessaria per la connessione tra Python e PostgreSQL.
+
+datetime: Libreria standard di Python per la gestione delle date.
 
  3. Istruzioni per l'esecuzione
 
-- Compilazione: Non richiesta (linguaggio SQL interpretato).
-- Avvio: Aprire un client SQL (come pgAdmin o il terminale del database).
-- Comando esatto: Copia e incolla il contenuto del file -database.sql.txt- all'interno di una nuova query SQL ed esegui il comando.
+Prima di avviare il programma Python, è necessario preparare il database:
+
+Accedere a PostgreSQL (es. tramite pgAdmin o terminale psql).
+
+Creare un database chiamato postgres.
+
+Eseguire il codice contenuto nel file (database.sql.txt) per creare le tabelle Categorie.
+
+Apri il terminale in Python e installa la libreria per la connessione al database psycopg2
+
+Per avviare l'applicazione, posizionati nella cartella del progetto ed esegui main.py dal terminale
+
+Una volta avviato, segui le istruzioni a schermo del menu interattivo.
