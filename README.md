@@ -36,7 +36,7 @@ Accedere a PostgreSQL (es. tramite pgAdmin o terminale psql).
 
 Creare un database chiamato postgres.
 
-Eseguire il codice contenuto nel file (database.sql.txt) per creare le tabelle Categorie.
+Eseguire il codice contenuto nel file (database.sql.txt) per creare le tabelle.
 
 Apri il terminale in Python e installa la libreria per la connessione al database psycopg2
 
